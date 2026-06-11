@@ -1,0 +1,206 @@
+.home {
+  padding-bottom: 4rem;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  overflow-x: auto;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #f1f3f5;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.tab.active {
+  background-color: var(--color-btn-blue);
+  color: white;
+}
+
+.search-section {
+  padding-top: 1rem;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 768px) {
+  .search-bar {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem;
+  }
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1rem;
+  flex: 1;
+}
+
+.search-input-wrapper input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.search-input-wrapper.location {
+  flex: 0.5;
+  justify-content: space-between;
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.search-btn {
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+}
+
+/* Featured Section */
+.carousel-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  position: relative;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+.carousel-nav.prev { left: -20px; }
+.carousel-nav.next { right: -20px; }
+
+.carousel-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .carousel-content {
+    flex-direction: row;
+    text-align: left;
+    padding: 0 2rem;
+  }
+}
+
+.img-placeholder {
+  width: 200px;
+  height: 120px;
+  background-color: #f1f3f5;
+  border-radius: var(--radius-md);
+}
+
+.business-name {
+  color: var(--color-primary-dark);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.business-rating { color: var(--color-accent); font-size: 0.875rem; margin-bottom: 0.5rem; }
+.business-link { color: var(--color-text-main); font-size: 0.875rem; text-decoration: underline; margin-bottom: 0.5rem; display: block; }
+.business-phone { color: var(--color-btn-blue); font-weight: 500; margin-bottom: 0.5rem; }
+.business-desc { color: var(--color-text-muted); font-size: 0.875rem; max-width: 500px; }
+
+.promo-banner {
+  background-color: #f8f9fa;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .promo-banner {
+    flex-direction: row;
+  }
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Post Ad Section */
+.post-ad-card {
+  background-color: #1a365d;
+  color: white;
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.post-ad-card h2 { margin-bottom: 1rem; font-size: 1.75rem; }
+.post-ad-card p { color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
+
+.footer-title h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+.footer-title p { color: var(--color-text-muted); }
+
+/* Chat Widget */
+.chat-widget {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.chat-btn {
+  background-color: var(--color-btn-blue);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.2s;
+}
+
+.chat-btn:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,138 @@
+.navbar {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-primary);
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.navbar-links.active {
+  display: flex;
+}
+
+.hide-on-mobile {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .navbar-links {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    width: auto;
+    padding: 0;
+    box-shadow: none;
+    background-color: transparent;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .hide-on-mobile {
+    display: inline;
+  }
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  padding: 0.5rem 0;
+  width: fit-content;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-accent);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-auth {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-register {
+  background-color: transparent;
+}
+
+.btn-register:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+.btn-login {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.btn-login:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+
+.mobile-menu-btn {
+  display: block;
+  color: white;
+}
+
+@media (min-width: 992px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}

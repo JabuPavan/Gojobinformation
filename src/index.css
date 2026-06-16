@@ -1,32 +1,34 @@
 :root {
-  /* Color Palette */
-  --color-primary: #8598c8; /* Navbar periwinkle/indigo */
+  /* Color Palette - Brand Themed Dark Mode (Obsidian + Periwinkle & Gold) */
+  --color-primary: #8598c8; /* Brand Periwinkle Blue */
   --color-primary-dark: #6e83b8;
-  --color-accent: #ffb800; /* Yellow */
-  --color-accent-hover: #e6a600;
-  --color-bg: #f5f7fa;
-  --color-surface: #ffffff;
-  --color-text-main: #1f2937;
-  --color-text-muted: #6b7280;
-  --color-border: #e5e7eb;
+  --color-accent: #f7f305; /* Exact Brand Yellow from Logo */
+  --color-accent-hover: #d1cc03; /* Slightly darker yellow for hover */
+  --color-bg: #0a0a0a; /* Matte Obsidian */
+  --color-surface: #121212; /* Elevated Jet */
+  --color-surface-hover: #1c1c1c; /* Lighter Jet */
+  --color-text-main: #ffffff; /* Pure White */
+  --color-text-muted: #a3a3a3; /* Crisp Ash Gray */
+  --color-border: #262626; /* Sharp minimal border */
   
   /* Buttons */
-  --color-btn-blue: #0066ff;
-  --color-btn-blue-hover: #0052cc;
+  --color-btn-blue: #8598c8;
+  --color-btn-blue-hover: #6e83b8;
 
   /* Typography */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* Shadows - Structural, not glowing */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8), 0 4px 6px -2px rgba(0, 0, 0, 0.6);
+  --shadow-neon: none; /* Removed entirely */
   
-  /* Radii */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
+  /* Radii - Sharp and structural */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
 }
 
 * {
@@ -39,14 +41,16 @@ body {
   font-family: var(--font-family);
   background-color: var(--color-bg);
   color: var(--color-text-main);
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 button {
@@ -54,17 +58,17 @@ button {
   border: none;
   background: none;
   font-family: inherit;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.4s ease-out forwards;
+  animation: fadeIn 0.3s ease-out forwards;
 }
 
 /* Utilities */
@@ -97,23 +101,30 @@ button {
 
 .input-label {
   font-weight: 500;
-  font-size: 0.875rem;
-  color: var(--color-text-main);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .input-field {
   padding: 0.75rem 1rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  font-size: 1rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, background-color 0.2s;
   outline: none;
   background-color: var(--color-surface);
+  color: var(--color-text-main);
 }
 
 .input-field:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(133, 152, 200, 0.2);
+  background-color: var(--color-bg);
+}
+
+.input-field::placeholder {
+  color: #525252;
 }
 
 /* Buttons */
@@ -121,24 +132,29 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.625rem 1.25rem;
+  padding: 0.5rem 1.25rem;
   font-weight: 600;
   border-radius: var(--radius-md);
   font-size: 0.875rem;
+  letter-spacing: 0.2px;
 }
 
 .btn-primary {
-  background-color: var(--color-btn-blue);
-  color: white;
+  background-color: var(--color-primary);
+  color: #000; /* Contrast against the lighter periwinkle */
 }
 
 .btn-primary:hover {
-  background-color: var(--color-btn-blue-hover);
+  background-color: var(--color-primary-dark);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
 }
 
 .btn-accent {
   background-color: var(--color-accent);
-  color: #000;
+  color: #000; /* Contrast against yellow/gold */
 }
 
 .btn-accent:hover {
@@ -147,12 +163,13 @@ button {
 
 .btn-outline {
   border: 1px solid var(--color-border);
-  background-color: transparent;
+  background-color: var(--color-surface);
   color: var(--color-text-main);
 }
 
 .btn-outline:hover {
-  background-color: rgba(0,0,0,0.05);
+  background-color: var(--color-surface-hover);
+  border-color: #404040;
 }
 
 .btn-ghost {
@@ -161,7 +178,7 @@ button {
 }
 
 .btn-ghost:hover {
-  background-color: rgba(0,0,0,0.05);
+  background-color: var(--color-surface);
   color: var(--color-text-main);
 }
 
@@ -173,7 +190,13 @@ button {
 .card {
   background-color: var(--color-surface);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   padding: 2rem;
   width: 100%;
+  border: 1px solid var(--color-border);
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: #404040;
 }

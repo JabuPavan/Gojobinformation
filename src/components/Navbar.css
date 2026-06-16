@@ -1,8 +1,8 @@
 .navbar {
-  background-color: var(--color-primary);
-  color: white;
-  padding: 1rem 0;
-  box-shadow: var(--shadow-sm);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -21,7 +21,7 @@
 }
 
 .logo-img {
-  max-height: 48px;
+  max-height: 40px;
   width: auto;
   object-fit: contain;
 }
@@ -32,10 +32,10 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: var(--color-primary);
+  background-color: var(--color-surface);
   flex-direction: column;
   padding: 1rem;
-  box-shadow: var(--shadow-md);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .navbar-links.active {
@@ -53,9 +53,9 @@
     flex-direction: row;
     width: auto;
     padding: 0;
-    box-shadow: none;
     background-color: transparent;
-    gap: 1.5rem;
+    border: none;
+    gap: 2rem;
     align-items: center;
   }
   
@@ -65,16 +65,17 @@
 }
 
 .nav-link {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-muted);
   position: relative;
   padding: 0.5rem 0;
   width: fit-content;
+  transition: color 0.2s;
 }
 
 .nav-link:hover, .nav-link.active {
-  color: var(--color-accent);
+  color: var(--color-text-main);
 }
 
 .nav-link::after {
@@ -83,9 +84,9 @@
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background-color: var(--color-accent);
-  transition: width 0.3s ease;
+  height: 1px;
+  background-color: var(--color-text-main);
+  transition: width 0.2s ease;
 }
 
 .nav-link:hover::after, .nav-link.active::after {
@@ -104,31 +105,39 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: var(--radius-sm);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 500;
   transition: all 0.2s;
-  border: 1px solid rgba(255,255,255,0.3);
 }
 
 .btn-register {
-  background-color: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid transparent;
 }
 
 .btn-register:hover {
-  background-color: rgba(255,255,255,0.1);
+  color: var(--color-text-main);
+  background-color: var(--color-surface);
 }
 
 .btn-login {
-  background-color: rgba(255,255,255,0.2);
+  background-color: var(--color-primary);
+  color: #000;
+  border: 1px solid var(--color-primary);
 }
 
 .btn-login:hover {
-  background-color: rgba(255,255,255,0.3);
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .mobile-menu-btn {
   display: block;
-  color: white;
+  color: var(--color-text-muted);
+}
+
+.mobile-menu-btn:hover {
+  color: var(--color-text-main);
 }
 
 @media (min-width: 992px) {

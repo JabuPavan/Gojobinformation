@@ -4,12 +4,12 @@
   --color-primary-dark: #6e83b8;
   --color-accent: #f7f305; /* Exact Brand Yellow from Logo */
   --color-accent-hover: #d1cc03; /* Slightly darker yellow for hover */
-  --color-bg: #0a0a0a; /* Matte Obsidian */
-  --color-surface: #121212; /* Elevated Jet */
-  --color-surface-hover: #1c1c1c; /* Lighter Jet */
-  --color-text-main: #ffffff; /* Pure White */
-  --color-text-muted: #a3a3a3; /* Crisp Ash Gray */
-  --color-border: #262626; /* Sharp minimal border */
+  --color-bg: #0f172a; /* Premium Slate-900 Background */
+  --color-surface: #1e293b; /* Slate-800 Card Surface */
+  --color-surface-hover: #334155; /* Slate-700 Hover */
+  --color-text-main: #f8fafc; /* Crisp Slate-50 Text */
+  --color-text-muted: #94a3b8; /* Crisp Slate-400 Muted Text */
+  --color-border: #334155; /* Slate-700 Border */
   
   /* Buttons */
   --color-btn-blue: #8598c8;
@@ -18,10 +18,10 @@
   /* Typography */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   
-  /* Shadows - Structural, not glowing */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8), 0 4px 6px -2px rgba(0, 0, 0, 0.6);
+  /* Shadows - Slate Dark Mode Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
   --shadow-neon: none; /* Removed entirely */
   
   /* Radii - Sharp and structural */
@@ -37,11 +37,24 @@
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--color-bg);
+  /* Premium Slate-Navy Ambient radial gradient using low opacity brand colors */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(133, 152, 200, 0.05) 0px, transparent 60%),
+    radial-gradient(at 100% 100%, rgba(247, 243, 5, 0.02) 0px, transparent 50%);
+  background-attachment: fixed;
   color: var(--color-text-main);
   line-height: 1.6;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -124,7 +137,7 @@ button {
 }
 
 .input-field::placeholder {
-  color: #525252;
+  color: #64748b;
 }
 
 /* Buttons */
@@ -141,7 +154,7 @@ button {
 
 .btn-primary {
   background-color: var(--color-primary);
-  color: #000; /* Contrast against the lighter periwinkle */
+  color: #000; /* Black text for contrast on brand periwinkle */
 }
 
 .btn-primary:hover {
@@ -154,7 +167,7 @@ button {
 
 .btn-accent {
   background-color: var(--color-accent);
-  color: #000; /* Contrast against yellow/gold */
+  color: #000; /* Black text for contrast on brand yellow */
 }
 
 .btn-accent:hover {
@@ -169,7 +182,7 @@ button {
 
 .btn-outline:hover {
   background-color: var(--color-surface-hover);
-  border-color: #404040;
+  border-color: #475569;
 }
 
 .btn-ghost {
@@ -188,15 +201,18 @@ button {
 
 /* Cards */
 .card {
-  background-color: var(--color-surface);
+  background-color: rgba(30, 41, 59, 0.7); /* Semi-transparent slate-800 surface */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   padding: 2rem;
   width: 100%;
   border: 1px solid var(--color-border);
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, background-color 0.2s;
 }
 
 .card:hover {
-  border-color: #404040;
+  border-color: rgba(133, 152, 200, 0.3); /* Subtle primary color border glow on hover */
+  background-color: rgba(30, 41, 59, 0.85);
 }

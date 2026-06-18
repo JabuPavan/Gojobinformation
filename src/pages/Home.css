@@ -95,12 +95,19 @@
 .carousel-card {
   display: flex;
   align-items: center;
-  background: var(--color-surface);
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
   padding: 2rem;
   position: relative;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.carousel-card:hover {
+  border-color: rgba(133, 152, 200, 0.3);
 }
 
 .carousel-nav {
@@ -166,7 +173,9 @@
 .business-desc { color: var(--color-text-muted); font-size: 0.875rem; max-width: 500px; }
 
 .promo-banner {
-  background-color: var(--color-surface);
+  background-color: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: 1rem 2rem;
@@ -175,6 +184,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.promo-banner:hover {
+  border-color: rgba(133, 152, 200, 0.3);
 }
 
 @media (min-width: 768px) {
@@ -190,13 +204,20 @@
 
 /* Post Ad Section */
 .post-ad-card {
-  background-color: var(--color-surface);
+  background-color: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--color-border);
   color: var(--color-text-main);
   border-radius: var(--radius-xl);
   padding: 3rem 2rem;
   text-align: center;
   box-shadow: var(--shadow-md);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.post-ad-card:hover {
+  border-color: rgba(133, 152, 200, 0.3);
 }
 
 .post-ad-card h2 { margin-bottom: 1rem; font-size: 1.75rem; font-weight: 600; }
@@ -214,7 +235,7 @@
 
 .chat-btn {
   background-color: var(--color-primary);
-  color: #000;
+  color: #000; /* Dark icon on periwinkle background */
   width: 60px;
   height: 60px;
   border-radius: 50%;
